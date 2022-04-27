@@ -1,8 +1,8 @@
-﻿using GroupWebApplication.Managers.Interfaces;
-using GroupWebApplication.Models;
+﻿using GroupWebApp.Managers.Interfaces;
+using GroupWebApp.Models;
 using System.Collections.Generic;
 
-namespace GroupWebApplication.Managers.Mocks
+namespace GroupWebApp.Managers.Mocks
 {
     public class MockCategory : IRecipesCategory
     {

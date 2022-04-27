@@ -1,4 +1,4 @@
-﻿namespace GroupWebApplication.Models
+﻿namespace GroupWebApp.Models
 {
     public class Recipe
     {
