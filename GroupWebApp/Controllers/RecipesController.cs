@@ -1,7 +1,7 @@
-﻿using GroupWebApplication.Managers.Interfaces;
+﻿using GroupWebApp.Managers.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
-namespace GroupWebApplication.Controllers
+namespace GroupWebApp.Controllers
 {
     public class RecipesController : Controller
     {

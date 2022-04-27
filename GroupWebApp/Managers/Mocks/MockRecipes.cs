@@ -1,9 +1,9 @@
-﻿using GroupWebApplication.Managers.Interfaces;
-using GroupWebApplication.Models;
+﻿using GroupWebApp.Managers.Interfaces;
+using GroupWebApp.Models;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace GroupWebApplication.Managers.Mocks
+namespace GroupWebApp.Managers.Mocks
 {
     public class MockRecipes : IAllRecipes
     {

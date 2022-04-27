@@ -6,9 +6,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using GroupWebApplication.Models;
+using GroupWebApp.Models;
 
-namespace GroupWebApplication.Managers.Interfaces
+namespace GroupWebApp.Managers.Interfaces
 {
     public interface IRecipesCategory
     {

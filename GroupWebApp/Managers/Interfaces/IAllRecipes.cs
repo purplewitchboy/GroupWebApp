@@ -1,4 +1,4 @@
-﻿using GroupWebApplication.Models;
+﻿using GroupWebApp.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace GroupWebApplication.Managers.Interfaces
+namespace GroupWebApp.Managers.Interfaces
 {
     public interface IAllRecipes
     {
