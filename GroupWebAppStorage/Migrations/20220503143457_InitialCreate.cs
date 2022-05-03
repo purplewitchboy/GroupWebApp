@@ -15,7 +15,6 @@ namespace GroupWebApp.Storage.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     categoryName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    desc = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {

@@ -7,7 +7,6 @@ namespace GroupWebApp.Storage.Entities
         [Key]
         public int Id { set; get; }
         public string categoryName { set; get; }
-        public string desc { set; get; }
     }
 
 }
