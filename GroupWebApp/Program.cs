@@ -1,4 +1,5 @@
-
+using Microsoft.EntityFrameworkCore;
+using GroupWebApp.Storage.Entities;
 
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
@@ -9,7 +10,7 @@ services.AddControllersWithViews();
 
 // Add Database Context.
 var connectionString = builder.Configuration.GetConnectionString("DbConnection");
-
+services.AddDbContext<RecipeContext>(param => param.UseSqlServer(connectionString));
 
 
 var app = builder.Build();
