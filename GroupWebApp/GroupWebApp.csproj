@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\GroupWebApp.Logic\GroupWebApp.Logic.csproj" />
     <ProjectReference Include="..\GroupWebAppStorage\GroupWebApp.Storage.csproj" />
   </ItemGroup>
 
