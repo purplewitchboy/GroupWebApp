@@ -1,4 +1,4 @@
-html {
+/*html {
   font-size: 14px;
 }
 
@@ -11,8 +11,120 @@ html {
 html {
   position: relative;
   min-height: 100%;
-}
+}*/
 
 body {
-  margin-bottom: 60px;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 60px;
+    font-size: 15px;
+    color: #333;
 }
+
+h1,h2,h3{
+    margin: 0;
+}
+
+
+/*intro*/
+.intro {
+    width: 100%;
+    height: 100vh;
+
+    background: url("../Images/Intro.jpeg")
+    center
+    no-repeat;
+    background-size: cover;
+}
+
+.intro__inner{
+    width: 100%;
+    max-width: 880px;
+    margin: 0 auto;
+
+}
+
+.intro_suptitle{
+    font-size: 72px;
+    color: #000000;
+
+}
+
+.intro__title{
+    font-size: 150px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1;
+    color: #000000;
+}
+
+
+
+/*header*/
+.header{
+    width: 100%;
+    padding-top: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+/*header_logo*/
+.header_logo{
+    font-size: 30px;
+    font-weight: 700;
+    color: #ff9100;
+}
+
+.header__inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/*nav*/
+.nav{
+    font-size: 14px;
+    text-transform: uppercase;
+    
+}
+
+.nav__link{
+    display: inline-block;
+    text-decoration: none;
+    color: #000000;
+    vertical-align: top;
+    margin: 0 20px;
+    position: relative;
+
+    transition: color 0.2s linear;
+}
+
+    .nav__link:after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 3px;
+        opacity: 0;
+
+        background-color: #ff9100;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1;
+
+        transition: opacity 0.2s linear;
+    }
+
+.nav__link:hover{
+    color: #ff9100
+}
+
+    .nav__link:hover:after {
+        opacity: 1;
+     
+    }
