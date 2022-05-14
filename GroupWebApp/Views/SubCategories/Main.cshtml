@@ -1,0 +1,7 @@
+﻿@model IList<GroupWebApp.Storage.Entities.SubCategory>
+    
+    <h1>Подкатегории</h1>
+
+@foreach (var subcategory in Model){
+    <p>@subcategory.NameSubCategory</p>
+}
