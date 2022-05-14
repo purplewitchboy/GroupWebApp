@@ -12,9 +12,9 @@ namespace GroupWebApp.Logic.SubCategories
 
         public async Task<IList<SubCategory>> GetAll() => await _context.SubCategories.ToListAsync();
 
-        public async Task Create(string name)
+        public async Task Create(string name, int id)
         {
-            var subcategory = new SubCategory { NameSubCategory = name };
+            var subcategory = new SubCategory { NameSubCategory = name, CategoryId = id };
             _context.SubCategories.Add(subcategory);
             await _context.SaveChangesAsync();
         }
