@@ -12,10 +12,16 @@ namespace GroupWebApp.Storage.Entities
         public string desc { set; get; }
 
         [Required]
+        public int SubCategoryId { get; set; }
         public int CategoryId { get; set; }
 
-        [ForeignKey(nameof(CategoryId))]
-        public virtual Category Category {get; set;}
+
+        [ForeignKey(nameof(SubCategoryId))]
+        public virtual SubCategory SubCategory {get; set;}
+        public virtual NationalKitchen NationalKitchen { get; set; }
+        public virtual TypeOfPreparation TypeOfPreparation { get; set; }
+        public virtual BySubIngredient BySubIngredient { get; set; }
+
     }
 
 }
