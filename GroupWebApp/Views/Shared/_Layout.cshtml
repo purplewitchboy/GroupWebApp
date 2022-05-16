@@ -6,8 +6,8 @@
     <title>@ViewData["Title"] Е-Кулинар</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comforter&family=Kaushan+Script&family=Montserrat:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Comforter&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> 
     <link rel="stylesheet" href="~/css/site.css" /> 
 </head>
@@ -58,14 +58,39 @@
          </div>
     </div>
 
+    <div class="box">
+       <div class ="border__1">
+               <div class="box__1">
+                   <div class="text">По типу приготовления</div>
+                   <div class="subtext__1">Найдем рецепты блюд, приготовленных на пару, в духовке и т.д.</div>
+                   <a class="btn__1" href="#">Далее</a>
+               </div>
+       </div>
+       <div class ="border__2">
+                <div class="box__2">
+                   <div class="text">По ингредиентам</div>
+                   <div class="subtext__2">Ищите рецепт с определенным продуктом? Мы вам поможем</div>
+                  <a class="btn__2" href="#">Далее</a>
+               </div>
+       </div>
+       <div class ="border__3">
+                <div class="box__3">
+                   <div class="text">Национальные кухни</div>
+                   <div class="subtext__3">Рецепты различных блюд всего мира предстваленны на нашем сайте</div>
+                 <a class="btn__3" href="#">Далее</a>
+               </div>
+       </div>
+    </div>
 
 
 
+<div class="category">
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
+</div>
 
     <footer class="border-top footer text-muted">
         <div class="container">

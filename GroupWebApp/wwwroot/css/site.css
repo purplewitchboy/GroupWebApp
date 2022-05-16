@@ -1,4 +1,4 @@
-/*html {
+html {
   font-size: 14px;
 }
 
@@ -11,17 +11,18 @@
 html {
   position: relative;
   min-height: 100%;
-}*/
+}
 
 body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
-    margin-bottom: 60px;
+    font-weight: 300;
+    margin-bottom: 50px;
     font-size: 15px;
     color: #333;
 }
 
-h1,h2,h3{
+h1,h2,h3,h4,h5,h6,h7,h8{
     margin: 0;
 }
 
@@ -119,7 +120,7 @@ h1,h2,h3{
     transition: color 0.2s linear;
 }
 
-    .nav__link:after {
+.nav__link:after {
         content: "";
         display: block;
         width: 100%;
@@ -145,22 +146,203 @@ h1,h2,h3{
 }
 
 /*button*/
-.button{
+.button {
     display: inline-block;
     vertical-align: top;
     padding: 8px 30px;
-
-    border: 3px solid #000000;
-
+    border: 1px solid #000000;
+    border-radius: 10px;
     font-size: 14px;
     font-weight: 700;
     color: #000000;
     text-transform: uppercase;
     text-decoration: none;
+    transition: background 0.2s linear, color 0.2s linear, border 0.2s linear;
 }
 
 
 .button:hover{
     background-color: #ff9100;
+    color: #ffffff;
+    border-color: #ff9100;
+}
 
+
+/*box*/
+.box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: -30px 60px 0 60px;
+}
+
+.text {
+    width: 300px;
+    height: 24px;
+    font-weight: 300;
+    font-size: 20px;
+    color: #FFFFFF;
+    padding: 20px 5px 0 18px;
+}
+
+.border__1 {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 310px;
+    height: 198px;
+    border: 1px solid #FBC002;
+    border-radius: 10px;
+}
+
+.box__1 {
+    height: 187px;
+    width: 301px;
+    background: #FBC002;
+    display: inline-block;
+    border-radius: 10px;
+    align-items: center;
+    margin: 4px 4px 4px 4px;
+}
+
+.subtext__1 {
+    width: 280px;
+    height: 71px;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 18px;
+    color: #E35538;
+    padding: 50px 0 0 18px;
+}
+
+.btn__1 {
+    display: inline-block;
+    vertical-align: top;
+    padding: 5px 15px;
+    border: 1px solid #E35538;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 300;
+    color: #ffffff;
+    text-decoration: none;
+    z-index: 10000;
+    margin: 34px 0 0 200px;
+    transition: background 0.2s linear, color 0.2s linear, border 0.2s linear;
+}
+
+.btn__1:hover {
+    background-color: #E35538;
+    color: #ffffff;
+    border-color: #E35538;
+}
+
+.border__2 {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 310px;
+    height: 198px;
+    border: 1px solid #E35538;
+    border-radius: 10px;
+
+}
+
+.box__2 {
+    height: 187px;
+    width: 301px;
+    background: #E35538;
+    display: inline-block;
+    border-radius: 10px;
+    margin: 4px 4px 4px 4px;
+}
+
+.subtext__2 {
+    width: 280px;
+    height: 71px;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 18px;
+    color: #F4A73F;
+    padding: 50px 0 0 18px;
+}
+
+.btn__2 {
+    display: inline-block;
+    vertical-align: top;
+    padding: 5px 15px;
+    border: 1px solid #F4A73F;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 300;
+    color: #ffffff;
+    text-decoration: none;
+    z-index: 10000;
+    margin: 34px 0 0 200px;
+    transition: background 0.2s linear, color 0.2s linear, border 0.2s linear;
+}
+
+.btn__2:hover {
+     background-color: #F4A73F;
+     color: #ffffff;
+     border-color: #F4A73F;
+ }
+
+.border__3 {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 310px;
+    height: 198px;
+    border: 1px solid #F4A73F;
+    border-radius: 10px;
+}
+
+.box__3 {
+    height: 187px;
+    width: 301px;
+    background: #F4A73F;
+    display: inline-block;
+    border-radius: 10px;
+    align-items: center;
+    margin: 4px 4px 4px 4px;
+}
+
+.subtext__3 {
+    width: 280px;
+    height: 71px;
+    color: #E35538;
+    font-weight: 300;
+    font-size: 15px;
+    padding: 50px 0 0 18px;
+    line-height: 18px;
+}
+
+.btn__3 {
+    display: inline-block;
+    vertical-align: top;
+    padding: 5px 15px;
+    border: 1px solid #E35538;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 300;
+    color: #ffffff;
+    text-decoration: none;
+    z-index: 10000;
+    margin: 34px 0 0 200px;
+    transition: background 0.2s linear, color 0.2s linear, border 0.2s linear;
+}
+
+.btn__3:hover {
+     background-color: #E35538;
+     color: #ffffff;
+     border-color: #E35538;
+}
+
+/*category*/
+
+.category {
+    width: 955px;
+    height: 1421px;
+    background: url("../Images/Background.jpg") center no-repeat;
+    transform: rotate(90);
+    background-size: cover;
+    margin: -70px auto;
 }
