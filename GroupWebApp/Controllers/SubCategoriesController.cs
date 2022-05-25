@@ -14,16 +14,16 @@ namespace GroupWebApp.Controllers
             _manager = manager;
         }
 
-        public async Task<IActionResult> Main()
+        public async Task<IActionResult> Main(int id)
         {
-            var subcategories = await _manager.GetAll();
+            var subcategories = await _manager.GetAll(id);
 
             return View(subcategories);
         }
 
         [HttpGet]
         [Route("subcategories")]
-        public Task<IList<SubCategory>> GetAll() => _manager.GetAll();
+        public Task<IList<SubCategory>> GetAll(CreateSubCategoryRequest request) => _manager.GetAll(request.categoryId);
 
         [HttpPut]
         [Route("subcategories")]

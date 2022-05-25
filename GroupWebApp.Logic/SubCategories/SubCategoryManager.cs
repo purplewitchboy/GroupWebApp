@@ -10,7 +10,7 @@ namespace GroupWebApp.Logic.SubCategories
             _context = context;
         }
 
-        public async Task<IList<SubCategory>> GetAll() => await _context.SubCategories.ToListAsync();
+        public async Task<IList<SubCategory>> GetAll(int id) => await _context.SubCategories.ToListAsync();
 
         public async Task Create(string name, int id)
         {

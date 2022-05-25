@@ -37,5 +37,8 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Categories}/{action=Main}/{id?}");
+app.MapControllerRoute(
+    name: "Sub",
+    pattern: "{controller=SubCategories}/{action=Main}/{id}");
 
 app.Run();
