@@ -4,5 +4,5 @@
 
 @foreach (var subcategory in Model)
 { 
-    <p>@subcategory.NameSubCategory</p>
+    <a asp-controller="Recipes" asp-route-id="@subcategory.Id">@subcategory.NameSubCategory</a>
 }
