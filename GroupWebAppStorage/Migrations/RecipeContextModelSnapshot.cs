@@ -105,9 +105,6 @@ namespace GroupWebApp.Storage.Migrations
                     b.Property<int>("BySubIngredientId")
                         .HasColumnType("int");
 
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
-
                     b.Property<byte>("Image")
                         .HasColumnType("tinyint");
 
