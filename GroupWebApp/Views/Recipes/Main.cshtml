@@ -1,0 +1,8 @@
+﻿@model IList<GroupWebApp.Storage.Entities.Recipe>
+    
+    <h1>Рецепты</h1>
+
+@foreach (var recipe in Model)
+{ 
+    <p>@recipe.Name</p>
+}

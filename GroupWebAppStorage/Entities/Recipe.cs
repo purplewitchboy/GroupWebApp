@@ -13,7 +13,6 @@ namespace GroupWebApp.Storage.Entities
 
         [Required]
         public int SubCategoryId { get; set; }
-        public int CategoryId { get; set; }
 
 
         [ForeignKey(nameof(SubCategoryId))]

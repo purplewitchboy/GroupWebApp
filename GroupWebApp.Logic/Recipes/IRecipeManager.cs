@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using GroupWebApp.Storage.Entities;
 
 namespace GroupWebApp.Logic.Recipes
 {
     public interface IRecipeManager
     {
-        Task<IList<Recipe>> GetAll();
-        Task Create(string name);
+        Task<IList<Recipe>> GetAll(int id);
+        Task Create(string name, int subcatId);
     }
 }

@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using GroupWebApp.Storage.Entities;
 using GroupWebApp.Logic.Categories;
 using GroupWebApp.Logic.SubCategories;
+using GroupWebApp.Logic.Recipes;
 
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
@@ -15,6 +16,7 @@ var connectionString = builder.Configuration.GetConnectionString("DbConnection")
 services.AddDbContext<RecipeContext>(param => param.UseSqlServer(connectionString));
 services.AddScoped<ICategoryManager, CategoryManager>();
 services.AddScoped<ISubCategoryManager, SubCategoryManager>();
+services.AddScoped<IRecipeManager, RecipeManager>();
 
 
 var app = builder.Build();
