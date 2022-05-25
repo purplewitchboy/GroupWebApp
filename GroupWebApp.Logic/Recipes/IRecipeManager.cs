@@ -8,7 +8,7 @@ namespace GroupWebApp.Logic.Recipes
 {
     public interface IRecipeManager
     {
-        Task<IList<Recipe>> GetAll();
-        Task Create(string name);
+        Task<IList<Recipe>> GetAll(int id);
+        Task Create(string name, int catId, int subcatId);
     }
 }
