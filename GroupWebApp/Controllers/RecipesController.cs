@@ -27,6 +27,6 @@ namespace GroupWebApp.Controllers
 
         [HttpPut]
         [Route("recipes")]
-        public Task Create([FromBody] CreateRecipeRequest request) => _manager.Create(request.Name, request.SubCategoryId);
+        public Task Create([FromBody] CreateRecipeRequest request) => _manager.Create(request.Name, request.SubCategoryId, request.desc, request.Image);
     }
 }
