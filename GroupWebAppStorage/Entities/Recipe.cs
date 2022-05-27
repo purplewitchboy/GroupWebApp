@@ -8,7 +8,7 @@ namespace GroupWebApp.Storage.Entities
         [Key]
         public int Id { set; get; }
         public string Name { set; get; }
-        public byte Image { set; get; }
+        public byte[] Image { set; get; }
         public string desc { set; get; }
 
         [Required]
