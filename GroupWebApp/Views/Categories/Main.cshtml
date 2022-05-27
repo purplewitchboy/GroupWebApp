@@ -3,5 +3,5 @@
     <h1>Категории</h1>
 
 @foreach (var category in Model){
-    <a asp-controller="SubCategories" asp-route-id="@category.Id">@category.categoryName</a> 
+    <a asp-controller="SubCategories" asp-route-id="@category.Id" class="button">@category.categoryName</a> 
 }
