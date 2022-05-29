@@ -6,5 +6,7 @@
         public byte[] Image { set; get; }
         public string desc { set; get; }
         public int SubCategoryId { get; set; }
+
+        public int NationalKitchenId { get; set; }
     }
 }

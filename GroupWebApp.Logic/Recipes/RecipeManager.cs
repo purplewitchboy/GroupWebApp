@@ -18,5 +18,19 @@ namespace GroupWebApp.Logic.Recipes
             _context.Recipes.Add(recipe);
             await _context.SaveChangesAsync();
         }
+
+        public List<Recipe> SortByNationalKitchen(int id)
+        {
+            var rec = _context.Recipes;
+
+            List<Recipe> recipes = new List<Recipe>();
+            var nkId = new Recipe { NationalKitchenId = id };
+            foreach (var oneRecipe in rec.ToList())
+            {
+                recipes.Add(oneRecipe);
+            }
+            
+            return recipes;
+        }
     }
 }

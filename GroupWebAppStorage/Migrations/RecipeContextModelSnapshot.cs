@@ -103,6 +103,9 @@ namespace GroupWebApp.Storage.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<int>("ByIngredientId")
+                        .HasColumnType("int");
+
                     b.Property<int>("BySubIngredientId")
                         .HasColumnType("int");
 

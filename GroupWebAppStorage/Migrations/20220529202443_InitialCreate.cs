@@ -110,10 +110,11 @@ namespace GroupWebApp.Storage.Migrations
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Image = table.Column<byte[]>(type: "varbinary(max)", nullable: false),
                     desc = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    SubCategoryId = table.Column<int>(type: "int", nullable: false),
                     NationalKitchenId = table.Column<int>(type: "int", nullable: false),
                     TypeOfPreparationId = table.Column<int>(type: "int", nullable: false),
-                    BySubIngredientId = table.Column<int>(type: "int", nullable: false)
+                    ByIngredientId = table.Column<int>(type: "int", nullable: false),
+                    BySubIngredientId = table.Column<int>(type: "int", nullable: false),
+                    SubCategoryId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
