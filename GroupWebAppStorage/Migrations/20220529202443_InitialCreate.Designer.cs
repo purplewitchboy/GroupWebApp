@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GroupWebApp.Storage.Migrations
 {
     [DbContext(typeof(RecipeContext))]
-    [Migration("20220527025659_InitialCreate")]
+    [Migration("20220529202443_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -104,6 +104,9 @@ namespace GroupWebApp.Storage.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("ByIngredientId")
+                        .HasColumnType("int");
 
                     b.Property<int>("BySubIngredientId")
                         .HasColumnType("int");

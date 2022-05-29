@@ -3,6 +3,7 @@ using GroupWebApp.Storage.Entities;
 using GroupWebApp.Logic.Categories;
 using GroupWebApp.Logic.SubCategories;
 using GroupWebApp.Logic.Recipes;
+using GroupWebApp.Logic.NationalKitchens;
 
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
@@ -17,6 +18,7 @@ services.AddDbContext<RecipeContext>(param => param.UseSqlServer(connectionStrin
 services.AddScoped<ICategoryManager, CategoryManager>();
 services.AddScoped<ISubCategoryManager, SubCategoryManager>();
 services.AddScoped<IRecipeManager, RecipeManager>();
+services.AddScoped<INationalKitchenManager, NationalKitchenManager>();
 
 
 var app = builder.Build();
@@ -42,5 +44,9 @@ app.MapControllerRoute(
 app.MapControllerRoute(
     name: "Sub",
     pattern: "{controller=SubCategories}/{action=Main}/{id}");
+app.MapControllerRoute(
+    name: "NK",
+    pattern: "{controller=Recipes}/{action=SortNK}/{id}");
+
 
 app.Run();
