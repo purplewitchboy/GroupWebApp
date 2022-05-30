@@ -49,15 +49,12 @@ namespace GroupWebApp.Controllers
         public Task<IList<Recipe>> GetAll(CreateRecipeRequest request) => _manager.GetAll(request.SubCategoryId);
 
         [HttpGet]
-        [Route("recipes")]
         public IList<Recipe> SortByNationalKitchen(CreateRecipeRequest request) => _manager.SortByNationalKitchen(request.NationalKitchenId);
 
         [HttpGet]
-        [Route("recipes")]
         public IList<Recipe> SortByTypeOfPreparation(CreateRecipeRequest request) => _manager.SortByTypeOfPreparation(request.TypeOfPreparationId);
 
         [HttpGet]
-        [Route("recipes")]
         public IList<Recipe> SortByIngredient(CreateRecipeRequest request) => _manager.SortByIngredient(request.IngredientId);
 
         [HttpPut]
