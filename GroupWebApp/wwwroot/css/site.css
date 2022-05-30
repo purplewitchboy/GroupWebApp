@@ -466,10 +466,6 @@ text-decoration: none;
 .sub-sub-menu_list>li{
     background-color: #333;
 }
-=======
-    z-index:-5;
-    margin: -200px auto;
-}
 
 /*.category_head {
     background: url("../images/intro1.jpeg") center no-repeat;
