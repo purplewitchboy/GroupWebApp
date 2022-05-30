@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GroupWebApp.Storage.Migrations
 {
     [DbContext(typeof(RecipeContext))]
-    [Migration("20220530063324_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20220530142359_Migration_1")]
+    partial class Migration_1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
