@@ -4,6 +4,8 @@ using GroupWebApp.Logic.Categories;
 using GroupWebApp.Logic.SubCategories;
 using GroupWebApp.Logic.Recipes;
 using GroupWebApp.Logic.NationalKitchens;
+using GroupWebApp.Logic.TypesOfPreparation;
+using GroupWebApp.Logic.Ingredients;
 
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
@@ -19,6 +21,9 @@ services.AddScoped<ICategoryManager, CategoryManager>();
 services.AddScoped<ISubCategoryManager, SubCategoryManager>();
 services.AddScoped<IRecipeManager, RecipeManager>();
 services.AddScoped<INationalKitchenManager, NationalKitchenManager>();
+services.AddScoped<ITypeOfPreparationManager, TypeOfPreparationManager>();
+services.AddScoped<IIngredientManager, IngredientManager>();
+
 
 
 var app = builder.Build();

@@ -6,6 +6,8 @@ namespace GroupWebApp.Logic.Recipes
     {
         Task<IList<Recipe>> GetAll(int id);
         List<Recipe> SortByNationalKitchen(int id);
+        List<Recipe> SortByTypeOfPreparation(int id);
+        List<Recipe> SortByIngredient(int id);
         Task Create(string name, int subcatId, string desk, byte[] image);
     }
 }

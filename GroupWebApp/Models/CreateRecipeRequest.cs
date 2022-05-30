@@ -8,5 +8,6 @@
         public int SubCategoryId { get; set; }
 
         public int NationalKitchenId { get; set; }
+        public int TypeOfPreparationId { get; set; }
     }
 }

@@ -32,5 +32,33 @@ namespace GroupWebApp.Logic.Recipes
             
             return recipes;
         }
+
+        public List<Recipe> SortByTypeOfPreparation(int id)
+        {
+            var rec = _context.Recipes;
+
+            List<Recipe> recipes = new List<Recipe>();
+            var topId = new Recipe { TypeOfPreparationId = id };
+            foreach (var oneRecipe in rec.ToList())
+            {
+                recipes.Add(oneRecipe);
+            }
+
+            return recipes;
+        }
+
+        public List<Recipe> SortByIngredient(int id)
+        {
+            var rec = _context.Recipes;
+
+            List<Recipe> recipes = new List<Recipe>();
+            var ingredientId = new Recipe { ByIngredientId = id };
+            foreach (var oneRecipe in rec.ToList())
+            {
+                recipes.Add(oneRecipe);
+            }
+
+            return recipes;
+        }
     }
 }
