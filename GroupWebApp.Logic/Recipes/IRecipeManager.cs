@@ -8,6 +8,6 @@ namespace GroupWebApp.Logic.Recipes
         List<Recipe> SortByNationalKitchen(int id);
         List<Recipe> SortByTypeOfPreparation(int id);
         List<Recipe> SortByIngredient(int id);
-        Task Create(string name, int subcatId, string desk, byte[] image);
+        Task Create(string name, int subcatId, string desk, string image);
     }
 }

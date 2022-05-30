@@ -19,7 +19,6 @@ namespace GroupWebApp.Storage.Entities
         public DbSet<NationalKitchen> NationalKitchens { get; set; }
         public DbSet<TypeOfPreparation> TypeOfPreparations { get; set; }
         public DbSet<ByIngredient> ByIngredients { get; set; }
-        public DbSet<BySubIngredient> BySubIngredients { get; set; }
         public DbSet<Category> Categories { get; set; }
     }
 }
