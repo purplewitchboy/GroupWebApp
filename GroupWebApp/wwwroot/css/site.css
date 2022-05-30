@@ -22,12 +22,16 @@ body {
     color: #333;
 }
 
-h1,h2,h3,h4,h5,h6,h7,h8{
+h2,h3,h4,h5,h6,h7,h8{
     margin: 0;
 }
 
 h1 {
+    font-size: 80px;
+    font-family: 'Comforter', cursive;
     text-align: center;
+    margin-top: 150px;
+    padding-top: 100px;
 }
 
 
@@ -48,6 +52,7 @@ h1 {
 .intro__inner{
     width: 100%;
     max-width: 880px;
+    margin-top: 20px;
     margin: 0 auto;
     text-align: center;
 
@@ -55,9 +60,9 @@ h1 {
 
 .intro_suptitle {
     margin-bottom: 15px;
+    font-family: 'Comforter', cursive;
     font-size: 72px;
     color: #000000;
-    font-family: 'Comforter', cursive;
     text-align: center;
 }
 
@@ -179,7 +184,7 @@ h1 {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    margin: 30px 60px 80px 60px;
+    margin: -30px 60px 80px 60px;
 }
 
 .text {
@@ -345,9 +350,58 @@ h1 {
 
 .category {
     width: 955px;
-    height: 1421px;
+    height: 1250px;
     background: url("../Images/Background.jpg") center no-repeat;
     transform: rotate(90);
     background-size: cover;
-    margin: -70px auto;
+    z-index:-5;
+    margin: -200px auto;
 }
+
+/*.category_head {
+    background: url("../images/intro1.jpeg") center no-repeat;
+    width: 100%;
+    height: 60px;
+    margin-top:50px;
+    z-index:10000;
+    background-size: cover;
+}*/
+
+.category_button {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    vertical-align: top;
+    padding: 20px 100px;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #000000;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s linear, color 0.2s linear, border 0.2s linear;
+}
+
+
+.category_button:hover {
+    background-color: #ff9100;
+    color: #ffffff;
+    border-color: #ff9100;
+}
+
+.footer_o {
+    background-color: #ff9100;
+ 
+    height: 30px;
+    position: center;
+    width: 100%;
+    bottom:0;
+}
+
+.footer_2 {
+    background-color: #ff9100;
+
+}
+
