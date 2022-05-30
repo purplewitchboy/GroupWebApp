@@ -9,5 +9,6 @@
 
         public int NationalKitchenId { get; set; }
         public int TypeOfPreparationId { get; set; }
+        public int IngredientId { get; set; }
     }
 }

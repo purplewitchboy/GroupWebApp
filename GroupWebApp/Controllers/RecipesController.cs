@@ -56,6 +56,10 @@ namespace GroupWebApp.Controllers
         [Route("recipes")]
         public IList<Recipe> SortByTypeOfPreparation(CreateRecipeRequest request) => _manager.SortByTypeOfPreparation(request.TypeOfPreparationId);
 
+        [HttpGet]
+        [Route("recipes")]
+        public IList<Recipe> SortByIngredient(CreateRecipeRequest request) => _manager.SortByIngredient(request.IngredientId);
+
         [HttpPut]
         [Route("recipes")]
         public Task Create([FromBody] CreateRecipeRequest request) => _manager.Create(request.Name, request.SubCategoryId, request.desc, request.Image);
