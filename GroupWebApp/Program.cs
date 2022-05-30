@@ -52,6 +52,12 @@ app.MapControllerRoute(
 app.MapControllerRoute(
     name: "NK",
     pattern: "{controller=Recipes}/{action=SortNK}/{id}");
+app.MapControllerRoute(
+    name: "TOP",
+    pattern: "{controller=Recipes}/{action=SortTOP}/{id}");
+app.MapControllerRoute(
+    name: "ING",
+    pattern: "{controller=Recipes}/{action=SortByIngredient}/{id}");
 
 
 app.Run();
