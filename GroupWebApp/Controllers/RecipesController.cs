@@ -28,6 +28,20 @@ namespace GroupWebApp.Controllers
             return View(recipes);
         }
 
+        public IActionResult SortTOP(int id)
+        {
+            var recipes = _manager.SortByTypeOfPreparation(id);
+
+            return View(recipes);
+        }
+
+        public IActionResult SortByIngredient(int id)
+        {
+            var recipes = _manager.SortByIngredient(id);
+
+            return View(recipes);
+        }
+
 
 
         [HttpGet]
@@ -37,6 +51,10 @@ namespace GroupWebApp.Controllers
         [HttpGet]
         [Route("recipes")]
         public IList<Recipe> SortByNationalKitchen(CreateRecipeRequest request) => _manager.SortByNationalKitchen(request.NationalKitchenId);
+
+        [HttpGet]
+        [Route("recipes")]
+        public IList<Recipe> SortByTypeOfPreparation(CreateRecipeRequest request) => _manager.SortByTypeOfPreparation(request.TypeOfPreparationId);
 
         [HttpPut]
         [Route("recipes")]
