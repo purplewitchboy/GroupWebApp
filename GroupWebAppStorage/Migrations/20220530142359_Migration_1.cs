@@ -4,7 +4,7 @@
 
 namespace GroupWebApp.Storage.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class Migration_1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
