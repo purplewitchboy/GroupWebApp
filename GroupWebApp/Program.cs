@@ -58,6 +58,19 @@ app.MapControllerRoute(
 app.MapControllerRoute(
     name: "ING",
     pattern: "{controller=Recipes}/{action=SortByIngredient}/{id}");
+app.MapControllerRoute(
+    name: "INGR",
+    pattern: "{controller=Ingredients}/{action=Main}/{id?}");
+app.MapControllerRoute(
+    name: "TofPr",
+    pattern: "{controller=TypesOfPreparation}/{action=Main}/{id?}");
+app.MapControllerRoute(
+    name: "NatKit",
+    pattern: "{controller=NationalKitchen}/{action=Main}/{id?}");
+
+
+
+
 
 
 app.Run();

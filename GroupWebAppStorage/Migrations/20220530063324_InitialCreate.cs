@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -62,26 +61,6 @@ namespace GroupWebApp.Storage.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "BySubIngredients",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    SubIngredient = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ByIngredientId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_BySubIngredients", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_BySubIngredients_ByIngredients_ByIngredientId",
-                        column: x => x.ByIngredientId,
-                        principalTable: "ByIngredients",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "SubCategories",
                 columns: table => new
                 {
@@ -108,67 +87,28 @@ namespace GroupWebApp.Storage.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Image = table.Column<byte[]>(type: "varbinary(max)", nullable: false),
+                    Image = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     desc = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     NationalKitchenId = table.Column<int>(type: "int", nullable: false),
                     TypeOfPreparationId = table.Column<int>(type: "int", nullable: false),
                     ByIngredientId = table.Column<int>(type: "int", nullable: false),
-                    BySubIngredientId = table.Column<int>(type: "int", nullable: false),
                     SubCategoryId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Recipes", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Recipes_BySubIngredients_BySubIngredientId",
-                        column: x => x.BySubIngredientId,
-                        principalTable: "BySubIngredients",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Recipes_NationalKitchens_NationalKitchenId",
-                        column: x => x.NationalKitchenId,
-                        principalTable: "NationalKitchens",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
                         name: "FK_Recipes_SubCategories_SubCategoryId",
                         column: x => x.SubCategoryId,
                         principalTable: "SubCategories",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Recipes_TypeOfPreparations_TypeOfPreparationId",
-                        column: x => x.TypeOfPreparationId,
-                        principalTable: "TypeOfPreparations",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_BySubIngredients_ByIngredientId",
-                table: "BySubIngredients",
-                column: "ByIngredientId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Recipes_BySubIngredientId",
-                table: "Recipes",
-                column: "BySubIngredientId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Recipes_NationalKitchenId",
-                table: "Recipes",
-                column: "NationalKitchenId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Recipes_SubCategoryId",
                 table: "Recipes",
                 column: "SubCategoryId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Recipes_TypeOfPreparationId",
-                table: "Recipes",
-                column: "TypeOfPreparationId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_SubCategories_CategoryId",
@@ -179,22 +119,19 @@ namespace GroupWebApp.Storage.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Recipes");
-
-            migrationBuilder.DropTable(
-                name: "BySubIngredients");
+                name: "ByIngredients");
 
             migrationBuilder.DropTable(
                 name: "NationalKitchens");
 
             migrationBuilder.DropTable(
-                name: "SubCategories");
+                name: "Recipes");
 
             migrationBuilder.DropTable(
                 name: "TypeOfPreparations");
 
             migrationBuilder.DropTable(
-                name: "ByIngredients");
+                name: "SubCategories");
 
             migrationBuilder.DropTable(
                 name: "Categories");

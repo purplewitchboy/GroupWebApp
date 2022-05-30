@@ -23,11 +23,11 @@ namespace GroupWebApp.Controllers
         }
 
         [HttpGet]
-        [Route("ingredient")]
+        [Route("ingredients")]
         public Task<IList<ByIngredient>> GetAll() => _manager.GetAll();
 
         [HttpPut]
-        [Route("ingredient")]
+        [Route("ingredients")]
         public Task Create([FromBody] CreateIngredientRequest request) => _manager.Create(request.Name);
     }
 }
