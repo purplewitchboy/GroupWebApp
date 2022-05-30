@@ -354,8 +354,8 @@ h1 {
     background: url("../Images/Background.jpg") center no-repeat;
     transform: rotate(90);
     background-size: cover;
-
-    margin: -70px auto;
+    z-index: -5;
+    margin: -200px auto;
 }
 
 .popup {
