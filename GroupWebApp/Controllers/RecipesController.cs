@@ -64,7 +64,7 @@ namespace GroupWebApp.Controllers
 
         [HttpPost]
         [Route("recipes")]
-        public async Task<IActionResult> Create(CreateRecipeRequest pvm)
+        public IActionResult Create([FromForm] CreateRecipeRequest pvm)
         {
             Recipe recipe = new Recipe { Name = pvm.Name, SubCategoryId = pvm.SubCategoryId, desc=pvm.desc };
             if (pvm.Img != null)
@@ -79,9 +79,8 @@ namespace GroupWebApp.Controllers
                 recipe.Pic = imageData;
             }
             _context.Recipes.Add(recipe);
-            await _context.SaveChangesAsync();
-
-            return RedirectToAction("Index");
+            _context.SaveChanges();
+            return RedirectToAction("Main");
         }
     }
 }
