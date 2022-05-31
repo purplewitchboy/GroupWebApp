@@ -4,6 +4,7 @@ using GroupWebApp.Storage.Entities;
 using GroupWebApp.Models;
 
 
+
 namespace GroupWebApp.Controllers
 {
     public class RecipesController : Controller
@@ -64,9 +65,9 @@ namespace GroupWebApp.Controllers
 
         [HttpPost]
         [Route("recipes")]
-        public IActionResult Create([FromForm] CreateRecipeRequest pvm)
+        public IActionResult OnPost([FromForm] CreateRecipeRequest pvm)
         {
-            Recipe recipe = new Recipe { Name = pvm.Name, SubCategoryId = pvm.SubCategoryId, desc=pvm.desc };
+            Recipe recipe = new Recipe { Name = pvm.Name, SubCategoryId = pvm.SubCategoryId, desc = pvm.Desc };
             if (pvm.Img != null)
             {
                 byte[] imageData = null;
