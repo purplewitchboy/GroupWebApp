@@ -68,9 +68,4 @@ app.MapControllerRoute(
     name: "NatKit",
     pattern: "{controller=NationalKitchen}/{action=Main}/{id?}");
 
-
-
-
-
-
 app.Run();
