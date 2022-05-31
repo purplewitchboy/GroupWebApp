@@ -3,15 +3,20 @@ using GroupWebApp.Logic.Recipes;
 using GroupWebApp.Storage.Entities;
 using GroupWebApp.Models;
 
+
 namespace GroupWebApp.Controllers
 {
     public class RecipesController : Controller
     {
         private readonly IRecipeManager _manager;
+        RecipeContext _context;
+        IWebHostEnvironment _appEnvironment;
 
-        public RecipesController(IRecipeManager manager)
+        public RecipesController(IRecipeManager manager, RecipeContext context, IWebHostEnvironment appEnvironment)
         {
             _manager = manager;
+            _context = context;
+
         }
 
         public async Task<IActionResult> Main(int id)
@@ -57,8 +62,26 @@ namespace GroupWebApp.Controllers
         [HttpGet]
         public IList<Recipe> SortByIngredient(CreateRecipeRequest request) => _manager.SortByIngredient(request.IngredientId);
 
-        [HttpPut]
+        [HttpPost]
         [Route("recipes")]
-        public Task Create([FromBody] CreateRecipeRequest request) => _manager.Create(request.Name, request.SubCategoryId, request.desc, request.Image);
+        public async Task<IActionResult> Create(CreateRecipeRequest pvm)
+        {
+            Recipe recipe = new Recipe { Name = pvm.Name, SubCategoryId = pvm.SubCategoryId, desc=pvm.desc };
+            if (pvm.Img != null)
+            {
+                byte[] imageData = null;
+                // считываем переданный файл в массив байтов
+                using (var binaryReader = new BinaryReader(pvm.Img.OpenReadStream()))
+                {
+                    imageData = binaryReader.ReadBytes((int)pvm.Img.Length);
+                }
+                // установка массива байтов
+                recipe.Pic = imageData;
+            }
+            _context.Recipes.Add(recipe);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("Index");
+        }
     }
 }

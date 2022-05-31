@@ -1,10 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
 namespace GroupWebApp.Storage.Migrations
 {
-    public partial class Migration_1 : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -87,7 +88,7 @@ namespace GroupWebApp.Storage.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Image = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Pic = table.Column<byte[]>(type: "varbinary(max)", nullable: false),
                     desc = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     NationalKitchenId = table.Column<int>(type: "int", nullable: false),
                     TypeOfPreparationId = table.Column<int>(type: "int", nullable: false),
