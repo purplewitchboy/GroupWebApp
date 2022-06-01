@@ -43,7 +43,7 @@ namespace GroupWebApp.Controllers
 
         public async Task<IActionResult> SortByIngredient(int id)
         {
-            var recipes = await _manager.SortByIngredient(id);
+            var recipes = await _manager.SortIngredient(id);
 
             return View(recipes);
         }
@@ -61,17 +61,17 @@ namespace GroupWebApp.Controllers
         public Task<IList<Recipe>> SortByTypeOfPreparation(CreateRecipeRequest request) => _manager.SortByTypeOfPreparation(request.TypeOfPreparationId);
 
         [HttpGet]
-        public Task<IList<Recipe>> SortByIngredient(CreateRecipeRequest request) => _manager.SortByIngredient(request.IngredientId);
+        public Task<IList<Recipe>> SortByIngredient(CreateRecipeRequest request) => _manager.SortIngredient(request.IngredientId);
 
 
         [HttpPost]
         [Route("recipes")]
         public IActionResult OnPost([FromForm] CreateRecipeRequest pvm)
         {
-            Recipe recipe = new Recipe { Name = pvm.Name, SubCategoryId = pvm.SubCategoryId, desc = pvm.Desc };
+            Recipe recipe = new Recipe { Name = pvm.Name, SubCategoryId = pvm.SubCategoryId, desc = pvm.Desc, TypeOfPreparationId = pvm.TypeOfPreparationId, NationalKitchenId = pvm.NationalKitchenId, ByIngredientId = pvm.IngredientId  };
             if (pvm.Img != null)
             {
-                byte[]? imageData = null;
+                byte[] imageData = null;
                 // считываем переданный файл в массив байтов
                 using (var binaryReader = new BinaryReader(pvm.Img.OpenReadStream()))
                 {
