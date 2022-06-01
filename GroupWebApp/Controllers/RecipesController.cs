@@ -68,10 +68,10 @@ namespace GroupWebApp.Controllers
         [Route("recipes")]
         public IActionResult OnPost([FromForm] CreateRecipeRequest pvm)
         {
-            Recipe recipe = new Recipe { Name = pvm.Name, SubCategoryId = pvm.SubCategoryId, desc = pvm.Desc };
+            Recipe recipe = new Recipe { Name = pvm.Name, SubCategoryId = pvm.SubCategoryId, desc = pvm.Desc, TypeOfPreparationId = pvm.TypeOfPreparationId, NationalKitchenId = pvm.NationalKitchenId, ByIngredientId = pvm.IngredientId  };
             if (pvm.Img != null)
             {
-                byte[]? imageData = null;
+                byte[] imageData = null;
                 // считываем переданный файл в массив байтов
                 using (var binaryReader = new BinaryReader(pvm.Img.OpenReadStream()))
                 {
