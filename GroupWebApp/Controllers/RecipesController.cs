@@ -4,7 +4,6 @@ using GroupWebApp.Storage.Entities;
 using GroupWebApp.Models;
 
 
-
 namespace GroupWebApp.Controllers
 {
     public class RecipesController : Controller
@@ -27,23 +26,23 @@ namespace GroupWebApp.Controllers
             return View(recipes);
         }
 
-        public async Task<IActionResult> SortNK(int id)
+        public IActionResult SortNK(int id)
         {
-            var recipes = await _manager.SortByNationalKitchen(id);
+            var recipes = _manager.SortByNationalKitchen(id);
 
             return View(recipes);
         }
 
-        public async Task<IActionResult> SortTOP(int id)
+        public IActionResult SortTOP(int id)
         {
-            var recipes = await _manager.SortByTypeOfPreparation(id);
+            var recipes = _manager.SortByTypeOfPreparation(id);
 
             return View(recipes);
         }
 
-        public async Task<IActionResult> SortByIngredient(int id)
+        public IActionResult SortByIngredient(int id)
         {
-            var recipes = await _manager.SortByIngredient(id);
+            var recipes = _manager.SortByIngredient(id);
 
             return View(recipes);
         }
@@ -55,23 +54,22 @@ namespace GroupWebApp.Controllers
         public Task<IList<Recipe>> GetAll(CreateRecipeRequest request) => _manager.GetAll(request.SubCategoryId);
 
         [HttpGet]
-        public Task<IList<Recipe>> SortByNationalKitchen(CreateRecipeRequest request) => _manager.SortByNationalKitchen(request.NationalKitchenId);
+        public IList<Recipe> SortByNationalKitchen(CreateRecipeRequest request) => _manager.SortByNationalKitchen(request.NationalKitchenId);
 
         [HttpGet]
-        public Task<IList<Recipe>> SortByTypeOfPreparation(CreateRecipeRequest request) => _manager.SortByTypeOfPreparation(request.TypeOfPreparationId);
+        public IList<Recipe> SortByTypeOfPreparation(CreateRecipeRequest request) => _manager.SortByTypeOfPreparation(request.TypeOfPreparationId);
 
         [HttpGet]
-        public Task<IList<Recipe>> SortByIngredient(CreateRecipeRequest request) => _manager.SortByIngredient(request.IngredientId);
-
+        public IList<Recipe> SortByIngredient(CreateRecipeRequest request) => _manager.SortByIngredient(request.IngredientId);
 
         [HttpPost]
         [Route("recipes")]
-        public IActionResult OnPost([FromForm] CreateRecipeRequest pvm)
+        public async Task<IActionResult> Create(CreateRecipeRequest pvm)
         {
-            Recipe recipe = new Recipe { Name = pvm.Name, SubCategoryId = pvm.SubCategoryId, desc = pvm.Desc };
+            Recipe recipe = new Recipe { Name = pvm.Name, SubCategoryId = pvm.SubCategoryId, desc=pvm.desc };
             if (pvm.Img != null)
             {
-                byte[]? imageData = null;
+                byte[] imageData = null;
                 // считываем переданный файл в массив байтов
                 using (var binaryReader = new BinaryReader(pvm.Img.OpenReadStream()))
                 {
@@ -81,8 +79,9 @@ namespace GroupWebApp.Controllers
                 recipe.Pic = imageData;
             }
             _context.Recipes.Add(recipe);
-            _context.SaveChanges();
-            return RedirectToAction("Main");
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("Index");
         }
     }
 }
