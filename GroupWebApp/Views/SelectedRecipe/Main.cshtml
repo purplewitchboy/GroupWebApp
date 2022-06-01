@@ -5,6 +5,8 @@
 @foreach (var recipe in Model)
 { 
      <p>@recipe.Name</p>
-      <img src="@recipe.Image" />
+     <img src="@System.Convert.ToBase64String(@recipe.Pic)" />
+    @*  <img src="@recipe.Pic" />*@
      <p>@recipe.desc</p>
 }
+ 

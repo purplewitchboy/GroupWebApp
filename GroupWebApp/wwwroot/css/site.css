@@ -354,8 +354,8 @@ h1 {
     background: url("../Images/Background.jpg") center no-repeat;
     transform: rotate(90);
     background-size: cover;
-
-    margin: -70px auto;
+    z-index: -5;
+    margin: -200px auto;
 }
 
 .popup {
@@ -402,6 +402,14 @@ h1 {
     text-decoration: none;
     
 }
+
+.popup_area {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
 .popup_title {
     font-size: 40px;
     margin: 0px 0px 1em 0px;
@@ -426,8 +434,9 @@ text-decoration: none;
 .menu_list>li:hover .sub-menu_list{
         display: block;
  }
-.menu_link{
+.menu_link {
     color: #000;
+    font-weight: bold;
 }
 
 .sub-menu_list {
@@ -436,6 +445,7 @@ text-decoration: none;
     position: absolute;
     left: 0;
     top: 20px;
+    background-color: #808080;
 }
 
 
@@ -456,7 +466,7 @@ text-decoration: none;
     top: 0;
     left: 100%;
     min-width: 150px;
-    padding: 0px 0px 0px 5px;
+    padding: 0px 0px 0px 0px;
 }
 .sub-sub-menu_link {
     color: #ffffff;
@@ -464,11 +474,8 @@ text-decoration: none;
     padding: 5px 10px;
 }
 .sub-sub-menu_list>li{
+    
     background-color: #333;
-}
-=======
-    z-index:-5;
-    margin: -200px auto;
 }
 
 /*.category_head {
@@ -504,18 +511,31 @@ text-decoration: none;
     border-color: #ff9100;
 }
 
-.footer_o {
+.foot {
     background-color: #ff9100;
- 
     height: 30px;
-    position: center;
+    position: absolute;
     width: 100%;
     bottom:0;
 }
 
-.footer_2 {
-    background-color: #ff9100;
 
+.name_recipe {
+    
+    color: aqua;
+    font-weight: bold; 
+    
 }
 
-
+.list_prep {
+    right: 100px;
+    display: flex;
+    justify-content: center;
+}
+.list_kitchen {
+    
+   
+    top: -2px;
+    left: 40px;
+    
+}
