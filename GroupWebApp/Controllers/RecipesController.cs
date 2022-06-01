@@ -63,6 +63,7 @@ namespace GroupWebApp.Controllers
         [HttpGet]
         public IList<Recipe> SortByIngredient(CreateRecipeRequest request) => _manager.SortByIngredient(request.IngredientId);
 
+
         [HttpPost]
         [Route("recipes")]
         public IActionResult OnPost([FromForm] CreateRecipeRequest pvm)
@@ -70,7 +71,7 @@ namespace GroupWebApp.Controllers
             Recipe recipe = new Recipe { Name = pvm.Name, SubCategoryId = pvm.SubCategoryId, desc = pvm.Desc };
             if (pvm.Img != null)
             {
-                byte[] imageData = null;
+                byte[]? imageData = null;
                 // считываем переданный файл в массив байтов
                 using (var binaryReader = new BinaryReader(pvm.Img.OpenReadStream()))
                 {
