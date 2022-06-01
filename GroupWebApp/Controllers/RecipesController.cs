@@ -43,7 +43,7 @@ namespace GroupWebApp.Controllers
 
         public async Task<IActionResult> SortByIngredient(int id)
         {
-            var recipes = await _manager.SortByIngredient(id);
+            var recipes = await _manager.SortIngredient(id);
 
             return View(recipes);
         }
@@ -61,7 +61,7 @@ namespace GroupWebApp.Controllers
         public Task<IList<Recipe>> SortByTypeOfPreparation(CreateRecipeRequest request) => _manager.SortByTypeOfPreparation(request.TypeOfPreparationId);
 
         [HttpGet]
-        public Task<IList<Recipe>> SortByIngredient(CreateRecipeRequest request) => _manager.SortByIngredient(request.IngredientId);
+        public Task<IList<Recipe>> SortByIngredient(CreateRecipeRequest request) => _manager.SortIngredient(request.IngredientId);
 
 
         [HttpPost]
