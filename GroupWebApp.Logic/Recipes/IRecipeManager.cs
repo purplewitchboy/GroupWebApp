@@ -8,6 +8,6 @@ namespace GroupWebApp.Logic.Recipes
         Task<IList<Recipe>> GetInfo(int id);
         Task <IList<Recipe>> SortByNationalKitchen(int id);
         Task<IList<Recipe>> SortByTypeOfPreparation(int id);
-        Task<IList<Recipe>> SortByIngredient(int id);
+        Task<IList<Recipe>> SortIngredient(int id);
     }
 }
