@@ -1,12 +1,18 @@
 ﻿@model IList<GroupWebApp.Storage.Entities.Recipe>
-    
-    <h1>Рецепты</h1>
+   
+    <div id="popup" class="popup">
+     <a href="#body" class="popup_area">
 
+     </a>
+        <div class="popup_body">
+            <div class="popup_content">
+                <a href="#body" class="popup_close">X</a>
+              <div class="popup_title">Добавьте свой рецепт!</div>
+              <div class="popup_text">                 
 @foreach (var recipe in Model)
 { 
      <a asp-controller="SelectedRecipe" asp-action="Main" asp-route-id="@recipe.Id" class="category_button">@recipe.Name</a>
 }
-
 @{
    <form asp-action="OnPost" asp-controller="Recipes" method="post" enctype="multipart/form-data">
     <p>
@@ -42,3 +48,7 @@
     </p>
 </form>
 }
+</div>
+</div>
+</div>
+</div>
