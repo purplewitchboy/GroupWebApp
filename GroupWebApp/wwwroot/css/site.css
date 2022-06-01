@@ -542,11 +542,11 @@ text-decoration: none;
 
 
 .Recipe__text {
-    text-align: right;
+    text-align: center;
+    align-items: center;
     display: flex;
-    width: 300px;
     height: 410px;
     font-weight: 300;
-    font-size: 20px;
+    font-size: 25px;
     color: #000000;
 }

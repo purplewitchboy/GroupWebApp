@@ -5,7 +5,7 @@
 @foreach (var recipe in Model)
 { 
     <h1>@recipe.Name</h1>
-     @Html.Raw("<img style='width:500px;align=middle; border-radius: 10px;height:410px; 'src=\"data:image/jpeg;base64,"+Convert.ToBase64String((recipe.Pic))+"\"/>")
-     <div class="Recipe__text">@recipe.desc</div>
+    <p class="Recipe__text"> @Html.Raw("<img style='width:500px; border-radius: 10px;height:410px; 'src=\"data:image/jpeg;base64,"+Convert.ToBase64String((recipe.Pic))+"\"/>")@recipe.desc</p>
+
 }
  
