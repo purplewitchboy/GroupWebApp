@@ -511,14 +511,19 @@ text-decoration: none;
     border-color: #ff9100;
 }
 
-.foot {
+.footer_o {
     background-color: #ff9100;
+ 
     height: 30px;
-    position: absolute;
+    position: center;
     width: 100%;
     bottom:0;
 }
 
+.footer_2 {
+    background-color: #ff9100;
+
+}
 
 .name_recipe {
     

@@ -17,7 +17,6 @@ namespace GroupWebApp.Controllers
         {
             var recipes = await _manager.GetInfo(id);
 
-
             return View(recipes);
         }
         [HttpGet]
