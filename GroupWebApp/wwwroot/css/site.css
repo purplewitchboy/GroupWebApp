@@ -539,3 +539,14 @@ text-decoration: none;
     left: 40px;
     
 }
+
+
+.Recipe__text {
+    text-align: right;
+    display: flex;
+    width: 300px;
+    height: 410px;
+    font-weight: 300;
+    font-size: 20px;
+    color: #000000;
+}
